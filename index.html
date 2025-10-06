@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Proyek E-Warung SMK 6 Kendari</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-store"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>E-Warung SMK 6 Kendari</h1>
+                    <p>Manajemen Proyek</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#dashboard" class="nav-link active">Dashboard</a></li>
+                    <li><a href="#tasks" class="nav-link">Tugas</a></li>
+                    <li><a href="#timeline" class="nav-link">Timeline</a></li>
+                    <li><a href="#team" class="nav-link">Tim</a></li>
+                    <li><a href="#documents" class="nav-link">Dokumen</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn-notification">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Project+Manager&background=FF6B35&color=fff" alt="User">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dashboard -->
+    <section id="dashboard" class="dashboard section-active">
+        <div class="container">
+            <div class="section-header">
+                <h2>Dashboard Proyek</h2>
+                <div class="project-info">
+                    <span class="project-status active">Dalam Pengerjaan</span>
+                    <span class="project-deadline">Deadline: 15 Juni 2024</span>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon orange">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Total Tugas</h3>
+                        <p id="total-tasks">0</p>
+                        <span class="stat-change">+2 minggu ini</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Selesai</h3>
+                        <p id="completed-tasks">0</p>
+                        <span class="stat-change">35% dari total</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orange">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Dalam Proses</h3>
+                        <p id="inprogress-tasks">0</p>
+                        <span class="stat-change">3 tugas aktif</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Anggota Tim</h3>
+                        <p>6 Orang</p>
+                        <span class="stat-change">Semua aktif</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-content">
+                <div class="progress-section">
+                    <div class="progress-header">
+                        <h3>Progress Proyek</h3>
+                        <span id="progress-text">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="project-progress"></div>
+                    </div>
+                    <div class="progress-milestones">
+                        <div class="milestone">
+                            <span class="milestone-dot completed"></span>
+                            <span class="milestone-text">Analisis</span>
+                        </div>
+                        <div class="milestone">
+                            <span class="milestone-dot active"></span>
+                            <span class="milestone-text">Desain</span>
+                        </div>
+                        <div class="milestone">
+                            <span class="milestone-dot"></span>
+                            <span class="milestone-text">Development</span>
+                        </div>
+                        <div class="milestone">
+                            <span class="milestone-dot"></span>
+                            <span class="milestone-text">Testing</span>
+                        </div>
+                        <div class="milestone">
+                            <span class="milestone-dot"></span>
+                            <span class="milestone-text">Deploy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <h3>Aktivitas Terbaru</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-avatar">
+                                <img src="https://ui-avatars.com/api/?name=Sari+Design&background=4CAF50&color=fff" alt="Sari">
+                            </div>
+                            <div class="activity-content">
+                                <p><strong>Sari</strong> menyelesaikan desain wireframe</p>
+                                <span class="activity-time">2 jam yang lalu</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-avatar">
+                                <img src="https://ui-avatars.com/api/?name=Dimas+Dev&background=FF6B35&color=fff" alt="Dimas">
+                            </div>
+                            <div class="activity-content">
+                                <p><strong>Dimas</strong> memulai development backend</p>
+                                <span class="activity-time">5 jam yang lalu</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-avatar">
+                                <img src="https://ui-avatars.com/api/?name=Budi+Frontend&background=4CAF50&color=fff" alt="Budi">
+                            </div>
+                            <div class="activity-content">
+                                <p><strong>Budi</strong> menambahkan task baru</p>
+                                <span class="activity-time">1 hari yang lalu</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tasks Section -->
+    <section id="tasks" class="tasks">
+        <div class="container">
+            <div class="section-header">
+                <h2>Manajemen Tugas</h2>
+                <div class="header-actions">
+                    <button class="btn btn-outline">
+                        <i class="fas fa-filter"></i> Filter
+                    </button>
+                    <button class="btn btn-primary" id="add-task-btn">
+                        <i class="fas fa-plus"></i> Tambah Tugas
+                    </button>
+                </div>
+            </div>
+
+            <div class="task-filters">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="todo">To Do</button>
+                <button class="filter-btn" data-filter="inprogress">In Progress</button>
+                <button class="filter-btn" data-filter="review">Review</button>
+                <button class="filter-btn" data-filter="done">Selesai</button>
+            </div>
+
+            <div class="task-board">
+                <div class="task-column" data-status="todo">
+                    <div class="column-header">
+                        <h3><i class="fas fa-circle todo"></i> To Do <span class="task-count">0</span></h3>
+                        <button class="column-action">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                    <div class="task-list" id="todo-list">
+                        <!-- Tasks will be added here -->
+                    </div>
+                </div>
+                
+                <div class="task-column" data-status="inprogress">
+                    <div class="column-header">
+                        <h3><i class="fas fa-circle inprogress"></i> In Progress <span class="task-count">0</span></h3>
+                        <button class="column-action">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                    <div class="task-list" id="inprogress-list">
+                        <!-- Tasks will be added here -->
+                    </div>
+                </div>
+                
+                <div class="task-column" data-status="review">
+                    <div class="column-header">
+                        <h3><i class="fas fa-circle review"></i> Review <span class="task-count">0</span></h3>
+                        <button class="column-action">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                    <div class="task-list" id="review-list">
+                        <!-- Tasks will be added here -->
+                    </div>
+                </div>
+                
+                <div class="task-column" data-status="done">
+                    <div class="column-header">
+                        <h3><i class="fas fa-circle done"></i> Selesai <span class="task-count">0</span></h3>
+                        <button class="column-action">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                    <div class="task-list" id="done-list">
+                        <!-- Tasks will be added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline">
+        <div class="container">
+            <div class="section-header">
+                <h2>Timeline Proyek</h2>
+                <div class="timeline-actions">
+                    <button class="btn btn-outline">
+                        <i class="fas fa-download"></i> Export
+                    </button>
+                </div>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-marker completed">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">1-7 April 2024</div>
+                        <h3>Analisis Kebutuhan</h3>
+                        <p>Gathering requirements dan analisis kebutuhan pengguna E-Warung</p>
+                        <div class="timeline-meta">
+                            <span class="status completed">Selesai</span>
+                            <span class="assignee">Ahmad & Team</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker active">
+                        <i class="fas fa-pencil-alt"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">8-21 April 2024</div>
+                        <h3>Desain UI/UX</h3>
+                        <p>Membuat wireframe, mockup, dan prototype dengan tema orange-hijau</p>
+                        <div class="timeline-meta">
+                            <span class="status in-progress">Dalam Proses</span>
+                            <span class="assignee">Sari</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">22 April - 12 Mei 2024</div>
+                        <h3>Development Frontend</h3>
+                        <p>Implementasi antarmuka pengguna dengan HTML, CSS, JavaScript</p>
+                        <div class="timeline-meta">
+                            <span class="status pending">Belum Dimulai</span>
+                            <span class="assignee">Budi & Rina</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">13-26 Mei 2024</div>
+                        <h3>Development Backend</h3>
+                        <p>Implementasi logika bisnis, database, dan API</p>
+                        <div class="timeline-meta">
+                            <span class="status pending">Belum Dimulai</span>
+                            <span class="assignee">Dimas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">27 Mei - 2 Juni 2024</div>
+                        <h3>Testing & Debugging</h3>
+                        <p>Pengujian aplikasi secara menyeluruh dan perbaikan bug</p>
+                        <div class="timeline-meta">
+                            <span class="status pending">Belum Dimulai</span>
+                            <span class="assignee">Lisa & Team</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">3-9 Juni 2024</div>
+                        <h3>Deployment & Launch</h3>
+                        <p>Peluncuran aplikasi E-Warung SMK 6 Kendari</p>
+                        <div class="timeline-meta">
+                            <span class="status pending">Belum Dimulai</span>
+                            <span class="assignee">Tim Lengkap</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tim Pengembang</h2>
+                <p class="section-subtitle">Tim terdiri dari 6 anggota dengan spesialisasi masing-masing</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-header">
+                        <div class="member-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Ahmad+PM&background=FF6B35&color=fff" alt="Ahmad">
+                        </div>
+                        <div class="member-role orange">Project Manager</div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Ahmad</h3>
+                        <p class="member-responsibility">Koordinator tim dan manajemen proyek</p>
+                        <div class="member-stats">
+                            <div class="stat">
+                                <span class="stat-number">12</span>
+                                <span class="stat-label">Tugas</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">8</span>
+                                <span class="stat-label">Selesai</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-skills">
+                        <span class="skill-tag">Manajemen</span>
+                        <span class="skill-tag">Komunikasi</span>
+                        <span class="skill-tag">Planning</span>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-header">
+                        <div class="member-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Sari+Design&background=4CAF50&color=fff" alt="Sari">
+                        </div>
+                        <div class="member-role green">UI/UX Designer</div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Sari</h3>
+                        <p class="member-responsibility">Desain antarmuka dan pengalaman pengguna</p>
+                        <div class="member-stats">
+                            <div class="stat">
+                                <span class="stat-number">7</span>
+                                <span class="stat-label">Tugas</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">3</span>
+                                <span class="stat-label">Selesai</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-skills">
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Adobe XD</span>
+                        <span class="skill-tag">Prototyping</span>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-header">
+                        <div class="member-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Budi+Frontend&background=FF6B35&color=fff" alt="Budi">
+                        </div>
+                        <div class="member-role orange">Frontend Developer</div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Budi</h3>
+                        <p class="member-responsibility">Implementasi komponen UI dan layout</p>
+                        <div class="member-stats">
+                            <div class="stat">
+                                <span class="stat-number">9</span>
+                                <span class="stat-label">Tugas</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">2</span>
+                                <span class="stat-label">Selesai</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-skills">
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Responsive</span>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-header">
+                        <div class="member-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Rina+Frontend&background=4CAF50&color=fff" alt="Rina">
+                        </div>
+                        <div class="member-role green">Frontend Developer</div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Rina</h3>
+                        <p class="member-responsibility">Implementasi fungsionalitas frontend</p>
+                        <div class="member-stats">
+                            <div class="stat">
+                                <span class="stat-number">8</span>
+                                <span class="stat-label">Tugas</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">1</span>
+                                <span class="stat-label">Selesai</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-skills">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">API Integration</span>
+                        <span class="skill-tag">State Management</span>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-header">
+                        <div class="member-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Dimas+Backend&background=FF6B35&color=fff" alt="Dimas">
+                        </div>
+                        <div class="member-role orange">Backend Developer</div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Dimas</h3>
+                        <p class="member-responsibility">Server, database, dan API development</p>
+                        <div class="member-stats">
+                            <div class="stat">
+                                <span class="stat-number">10</span>
+                                <span class="stat-label">Tugas</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">4</span>
+                                <span class="stat-label">Selesai</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-skills">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">REST API</span>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-header">
+                        <div class="member-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Lisa+QA&background=4CAF50&color=fff" alt="Lisa">
+                        </div>
+                        <div class="member-role green">Quality Assurance</div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Lisa</h3>
+                        <p class="member-responsibility">Testing, quality control, dan debugging</p>
+                        <div class="member-stats">
+                            <div class="stat">
+                                <span class="stat-number">6</span>
+                                <span class="stat-label">Tugas</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">0</span>
+                                <span class="stat-label">Selesai</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-skills">
+                        <span class="skill-tag">Testing</span>
+                        <span class="skill-tag">Debugging</span>
+                        <span class="skill-tag">Quality</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documents Section -->
+    <section id="documents" class="documents">
+        <div class="container">
+            <div class="section-header">
+                <h2>Dokumen Proyek</h2>
+                <p class="section-subtitle">Semua dokumen penting untuk pengembangan proyek</p>
+            </div>
+
+            <div class="documents-grid">
+                <div class="document-card">
+                    <div class="document-icon orange">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="document-info">
+                        <h3>Dokumen Kebutuhan</h3>
+                        <p>Spesifikasi fungsional dan non-fungsional aplikasi</p>
+                        <div class="document-meta">
+                            <span class="document-size">2.4 MB</span>
+                            <span class="document-update">Update: 5 Apr 2024</span>
+                        </div>
+                    </div>
+                    <div class="document-actions">
+                        <button class="btn-download orange">
+                            <i class="fas fa-download"></i>
+                        </button>
+                        <button class="btn-preview">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="document-card">
+                    <div class="document-icon green">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="document-info">
+                        <h3>Desain UI/UX</h3>
+                        <p>Wireframe, mockup, dan style guide tema orange-hijau</p>
+                        <div class="document-meta">
+                            <span class="document-size">5.1 MB</span>
+                            <span class="document-update">Update: 10 Apr 2024</span>
+                        </div>
+                    </div>
+                    <div class="document-actions">
+                        <button class="btn-download green">
+                            <i class="fas fa-download"></i>
+                        </button>
+                        <button class="btn-preview">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="document-card">
+                    <div class="document-icon orange">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="document-info">
+                        <h3>Technical Specification</h3>
+                        <p>Spesifikasi teknis dan arsitektur sistem</p>
+                        <div class="document-meta">
+                            <span class="document-size">1.8 MB</span>
+                            <span class="document-update">Update: 8 Apr 2024</span>
+                        </div>
+                    </div>
+                    <div class="document-actions">
+                        <button class="btn-download orange">
+                            <i class="fas fa-download"></i>
+                        </button>
+                        <button class="btn-preview">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="document-card">
+                    <div class="document-icon green">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="document-info">
+                        <h3>Project Plan</h3>
+                        <p>Rencana kerja, timeline, dan pembagian tugas</p>
+                        <div class="document-meta">
+                            <span class="document-size">3.2 MB</span>
+                            <span class="document-update">Update: 3 Apr 2024</span>
+                        </div>
+                    </div>
+                    <div class="document-actions">
+                        <button class="btn-download green">
+                            <i class="fas fa-download"></i>
+                        </button>
+                        <button class="btn-preview">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Task Modal -->
+    <div class="modal" id="task-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Tambah Tugas Baru</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form id="task-form">
+                <div class="form-group">
+                    <label for="task-title">Judul Tugas</label>
+                    <input type="text" id="task-title" placeholder="Masukkan judul tugas" required>
+                </div>
+                <div class="form-group">
+                    <label for="task-description">Deskripsi</label>
+                    <textarea id="task-description" rows="3" placeholder="Deskripsi detail tugas"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="task-assignee">Ditugaskan ke</label>
+                        <select id="task-assignee" required>
+                            <option value="">Pilih Anggota</option>
+                            <option value="ahmad">Ahmad (Project Manager)</option>
+                            <option value="sari">Sari (UI/UX Designer)</option>
+                            <option value="budi">Budi (Frontend 1)</option>
+                            <option value="rina">Rina (Frontend 2)</option>
+                            <option value="dimas">Dimas (Backend)</option>
+                            <option value="lisa">Lisa (QA)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-priority">Prioritas</label>
+                        <select id="task-priority" required>
+                            <option value="low">Rendah</option>
+                            <option value="medium" selected>Sedang</option>
+                            <option value="high">Tinggi</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="task-deadline">Deadline</label>
+                        <input type="date" id="task-deadline" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-status">Status</label>
+                        <select id="task-status" required>
+                            <option value="todo">To Do</option>
+                            <option value="inprogress">In Progress</option>
+                            <option value="review">Review</option>
+                            <option value="done">Done</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline" id="cancel-task">Batal</button>
+                    <button type="submit" class="btn btn-primary">Simpan Tugas</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-store"></i>
+                        <span>E-Warung SMK 6 Kendari</span>
+                    </div>
+                    <p>Platform manajemen proyek untuk pengembangan aplikasi E-Warung</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontak</h4>
+                    <p><i class="fas fa-envelope"></i> smk6kendari@school.id</p>
+                    <p><i class="fas fa-phone"></i> (0401) 123-456</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Jl. Pendidikan No. 6, Kendari</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Tim Pengembang</h4>
+                    <p>Project Manager: Ahmad</p>
+                    <p>UI/UX Designer: Sari</p>
+                    <p>Frontend: Budi & Rina</p>
+                    <p>Backend: Dimas</p>
+                    <p>QA: Lisa</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 E-Warung SMK 6 Kendari. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
